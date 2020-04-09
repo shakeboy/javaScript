@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+
+        window.onload = function () {
+            /**
+             *通过jQuery找标签
+             */
+            $(function () {
+                    let $div1 = $("div");
+                    console.log($div1);
+                    let $div2=$(".box");
+                    let $div3=$('#box2');
+                    $div1.css({
+                        background:"red",
+                        width:"100px",
+                        height:"50px",
+                    });
+                    $div2.css({
+                        background: "yellow"
+                    });
+                    $div3.css({
+                        background:"blue"
+                    });
+            });
+
+        }
+    </script>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            border: #ff93ec 2px solid;
+        }
+    </style>
+</head>
+<body>
+       <div></div>
+       <div class="box"></div>
+       <div id="box"></div>
+
+</body>
+</html>

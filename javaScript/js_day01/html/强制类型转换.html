@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /**
+         * 将一个类型数据迁至转换成为其他的数据类型
+         * --将其他的数据类型转换为
+         *          String Number Boolean
+         */
+
+        /**
+         * 将其他类型的数据转化成String
+         */
+        let a = 123;
+        a = String(a);
+        let b = a.toString();
+        console.log(b);
+        console.log(typeof b);
+        /**
+         * null,和，undefined，，，，没有toString()方法，会报错
+         * Uncaught TypeError: Cannot read property 'toString' of null
+         * at 强制类型转换.html?_ijt=pcnm95ee31tqbb92p3m85m4mcf:24
+         */
+        let c = null;
+        // c = c.toString();
+        c=String(c);
+        let d;
+        // d.toString();
+        /**
+         * String()函数
+         * @type {string}
+         */
+        d = String(d);
+        console.log(a)
+        console.log(typeof a)
+        console.log(c);
+        console.log(d);
+        /**
+         * Number()
+         *      1.字符串纯数字-->number
+         *      2.非纯数字-->NAN
+         *      3.调用Number()转换
+         *      4.全是空格,空串-->数字
+         *
+         * 专门对付字符串
+         *      1.parseInt()把一个字符串转换成数字
+         *           取出有效的整数字
+         *      2.parseFloat()
+         *      对于非String会先转换成String然后再执行
+         * @type {number}
+         */
+        let i = '589';
+        i = Number(i);
+        console.log(i);
+        console.log(typeof i);
+        /**
+         * 1.数字-->Boolean
+         * 除了0和NAN,都为true
+         * 2.字符串-->Boolean
+         * 除了空串都是true
+         * 3.null,undefined-->false
+         * 4.对象也会转换成true
+         * @type {string}
+         */
+        let bl = "true";
+        bl = Boolean(bl);
+        console.log(bl);
+        console.log(typeof bl);
+        let j = "";
+        let k = "   ";
+        console.log(typeof Number(j));
+        console.log(typeof Number(k));
+
+        let e = "123.4561px455";
+        e = parseInt(e);
+        console.log(e);
+        e = "123.4561px455";
+        e = parseFloat(e);
+        console.log(e);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

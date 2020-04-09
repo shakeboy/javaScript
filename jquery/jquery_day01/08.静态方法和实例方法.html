@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery库/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        /*
+        1.静态方法
+         */
+        function AClass(){
+            //静态方法
+
+        }
+        AClass.staticMethod = function () {
+            alert("静态方法");
+        };
+        //静态方法通过类名调用
+        AClass.staticMethod();
+
+        /*
+        2.实例方法
+         */
+        AClass.prototype.instanceMethod = function () {
+            alert("实例方法");
+        };
+        //通过实例对象调用
+         let instance = new AClass();
+        instance.instanceMethod();
+    </script>
+    <style>
+
+    </style>
+</head>
+<body>
+
+</body>
+</html>

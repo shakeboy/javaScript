@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery库/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            let btn = document.getElementsByTagName("button")[0];
+            btn.onclick = function () {
+                $.holdReady(false);
+                alert("惦记我！windows");
+            }
+        }
+        $.holdReady(true);//暂停jQuery事件的执行
+        $(function () {
+            alert("惦记我jquery")
+        })
+    </script>
+    <style>
+
+    </style>
+</head>
+<body>
+    <button>惦记我</button>
+</body>
+</html>

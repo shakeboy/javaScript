@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form>
+        <b id="question">请选择你喜欢的书籍</b>
+        <input type="checkbox" id="allIsChecked">全选/全不选<br>
+        <input type="checkbox" name="items" value="《离骚》">《离骚》
+        <input type="checkbox" name="items" value="《诗经》">《诗经》
+        <input type="checkbox" name="items" value="《平凡的世界》">《平凡的世界》
+        <input type="checkbox" name="items" value="《三体》">《三体》
+        <input type="checkbox" name="items" value="《我们呼啸而过的青春》">《我们呼啸而过的青春》
+        <input type="checkbox" name="items" value="《快乐的王子》">《快乐的王子》
+        <input type="checkbox" name="items" value="《侠客行》">《侠客行》<br>
+        <input type="checkbox" id="allChecked" name="submit">全选
+        <input type="checkbox" id="reverseAll">反选
+        <input type="button" id="submit" name="reverse">提交
+    </form>
+    您提交的数据是：<div id="myText" >数据</div>
+<script type="text/javascript">
+
+    let allNames = document.getElementsByName("items");
+    let myText = document.getElementById("myText");
+    let allChecked =document.getElementById("allChecked");
+    let allIsChecked =document.getElementById("allIsChecked");
+    let reverseAll =document.getElementById("reverseAll");
+    let checkedCount = 0;//被选中数
+    /**
+     * 封装点击事件
+     * @type {HTMLElement}
+     */
+    function myClick(id,fun){
+        id = document.getElementById(id);
+        id.onclick = fun;
+    }
+    /**
+     * 事件监听，所有复选框都选中时，全选应该被选上，同步------
+     */
+    for(let i=0;i<allNames.length;i++){
+        allNames[i].onclick = function () {
+            Count();
+            // alert(checkedCount);
+            if(checkedCount!==allNames.length){
+                allChecked.checked = false;
+                allIsChecked.checked = false;
+            } else{
+                allChecked.checked = true;
+                allIsChecked.checked = true;
+            }
+        }
+    }
+    //监听选中个数
+    function Count(){
+        checkedCount = 0;
+        for(let i=0;i<allNames.length;i++){
+            if(allNames[i].checked===true){
+                checkedCount++;
+            }
+        }
+    }
+    //全选全不选点击
+    myClick("allIsChecked",function () {
+        if(allIsChecked.checked===true){
+            allChecked.checked = true;
+            for(let i =0;i<allNames.length;i++) {
+                allNames[i].checked =true;
+            }
+        }else{
+            allChecked.checked = false;
+            for(let i =0;i<allNames.length;i++) {
+                allNames[i].checked =false;
+            }
+
+        }
+    });
+    //全选
+    myClick("allChecked",function () {
+        if(allChecked.checked===true){
+            for(let i =0;i<allNames.length;i++) {
+                allNames[i].checked =true;
+            }
+            allIsChecked.checked = true;
+        }
+        else{
+
+        }
+    });
+    //反选
+    myClick("reverseAll",function () {
+        checkedCount = 0;
+        for(let i =0;i<allNames.length;i++){
+            allNames[i].checked = !allNames[i].checked;
+        }
+        Count();
+        if(checkedCount===allNames.length){
+            allIsChecked.checked = true;
+            allChecked.checked = true;
+        }else {
+            allIsChecked.checked = false;
+            allChecked.checked = false;
+        }
+    });
+    //提交
+    myClick("submit",function () {
+        let info = "";
+        let bookArray = [];
+        for(let i=0;i<allNames.length;i++){
+            if(allNames[i].checked === true){
+                bookArray.push(allNames[i].value+"\n");
+                // alert(allNames[i].value);
+            }
+        }
+        for(let i =0;i<bookArray.length;i++){
+            info = info + bookArray[i]+"\n";
+        }
+        myText.innerHTML = info;
+        // alert(myText.value);
+        // alert(myText.text);
+
+        // console.log(typeof info);
+        // console.log(myText);
+        // console.log(myText.value);
+        // console.log(myText.value);
+    });
+
+</script>
+</body>
+</html>

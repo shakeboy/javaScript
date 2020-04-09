@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    body{
+        margin:0;
+        padding: 0;
+        text-align: center;
+    }
+    img{
+        width: 400px;
+        height: 400px;
+        padding-top:20px;
+        background-color: #ff93ec;
+        color: forestgreen;
+    }
+    div{
+        margin-top: 200px;
+        height: auto;
+        margin-left: 34%;
+        margin-right: 34%;
+        background-color: #ff93ec;
+        border-radius: 20px;
+        border:40px forestgreen solid;
+    }
+</style>
+<body>
+    <div>
+        <img id="img" src="../img/1.png"><br>
+        <button onclick="beforePhoto()">上一张</button>
+        <button onclick="nextPhoto()">下一张</button>
+        <b id="info"></b>
+    </div>
+
+<script>
+
+    let imgArray = ["./img/1.png","./img/2.png","./img/3.png","./img/4.png","./img/5.png","./img/6.png","./img/7.png","./img/8.png"];
+    let index =0;
+    let img = document.getElementById("img");
+    let info = document.getElementById("info");
+
+    function beforePhoto(){
+        index--;
+        if(index>-1){
+            img.src = imgArray[index];
+        }else{
+            index = imgArray.length - 1;
+            img.src = imgArray[index];
+        }
+        info.innerHTML = "一共"+imgArray.length+"张"+"当前第"+(index+1)+"张";
+        // img.style.height = "500px";
+
+
+    }
+    function nextPhoto(){
+        index++;
+        if(index<imgArray.length){
+            img.src = imgArray[index];
+        }else{
+            index = 0;
+            img.src = imgArray[index];
+        }
+        info.innerHTML = "一共"+imgArray.length+"张"+"当前第"+(index+1)+"张";
+    }
+</script>
+</body>
+</html>

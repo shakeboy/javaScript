@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            /**
+             *
+             */
+            let ps = ["./img/1.png","./img/2.png","./img/3.png","./img/4.png","./img/5.png","./img/6.png","./img/7.png","./img/8.png"];
+            let index =1;
+            let before = document.getElementById("before");
+            let after = document.getElementById("after");
+            let img = document.getElementById("img");
+            before.onclick = function () {
+                index--;
+                if(index === 0){
+                    index = ps.length;
+                }
+                img.src = ps[index-1];
+            };
+            after.onclick = function () {
+                index++;
+                if(index===ps.length){
+                    index = 0
+                }
+                img.src =ps[index];
+            }
+        }
+    </script>
+    <style>
+
+    </style>
+</head>
+<body>
+    <img id="img" src="./img/1.png"><br>
+    <input type="button" id="before">上一张
+    <input type="button" id="after">下一张
+</body>
+</html>

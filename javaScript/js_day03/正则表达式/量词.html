@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$Title$</title>
+    <script type="javascript">
+        /**
+         * 量词 描述
+         n+ 匹配任何包含至少一个 n 的字符串。
+         n* 匹配任何包含零个或多个 n 的字符串。
+         n? 匹配任何包含零个或一个 n 的字符串。
+         n{X} 匹配包含 X 个 n 的序列的字符串。
+         n{X,Y} 匹配包含 X 至 Y 个 n 的序列的字符串。
+         n{X,} 匹配包含至少 X 个 n 的序列的字符串。
+         n$ 匹配任何结尾为 n 的字符串。
+         ^n 匹配任何开头为 n 的字符串。
+         ?=n 匹配任何其后紧接指定字符串 n 的字符串。
+         ?!n 匹配任何其后没有紧接指定字符串 n 的字符串
+
+         */
+        let str = "abc1256abc88bdf";
+        let reg = /^a/;//以a开头
+        reg = /a$/;//以a结尾
+        console.log(reg.test(str));
+        reg = /a+/;//包括至少一次的a
+        console.log(reg.test(str));
+        reg = /a?/;//匹配包含一次或者0次的字符串
+        console.log(reg.test(str));
+        reg = /a{2,5}/;//2-5次
+        console.log(reg.test(str));
+        reg = /^a$/;//以a开头或者以a结尾
+        console.log(reg.test(str));
+        reg = /a{2，}/;//至少包含2次
+        console.log(reg.test(str));
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

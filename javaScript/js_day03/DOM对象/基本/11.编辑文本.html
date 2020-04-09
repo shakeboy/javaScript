@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="zh">
+
+<head>
+    <title>小钊</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/css1.css">
+    <script type="text/javascript" src="js/dome.js"></script>
+    <script type="text/javascript" src="modernizr.js"></script>
+
+    <script type="text/javascript">
+        //开始编辑
+        function startEdit()
+        {
+            var ele = document.getElementById("editDome");
+            ele.contentEditable = true;
+        }
+
+        //停止编辑
+        function stopEdit()
+        {
+            var les = document.getElementById("editDome");
+            les.contentEditable =false;
+//提示
+            alert("当前输入的内容是：" + les.innerHTML);
+        }
+    </script>
+
+
+</head>
+
+<body>
+<br>
+<div id="editDome" style="width:240px;height:100px;background-color:#FEFFCE">
+    你可以编辑这段文本
+</div>
+<button onclick="startEdit()">开始编辑</button>
+<button onclick="stopEdit()">停止编辑</button>
+<input type="url">
+</body>
+</html>

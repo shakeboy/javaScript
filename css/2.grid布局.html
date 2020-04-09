@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            /**
+             *
+             */
+
+
+        }
+    </script>
+    <style>
+        .grid{
+            display: grid;
+            grid-template-columns:1fr 2fr 1fr;
+            grid-template-rows: 100px 800px 100px;
+            gap:20px;
+            grid-template-areas:
+                "header header header"
+                "sidebar content content"
+                "footer footer footer";
+        }
+        header{
+            grid-area: header;
+            background-color: #ff93ec;
+        }
+        aside{
+            grid-area:sidebar;
+            background-color: #FEFFCE;
+        }
+        main{
+            grid-area: content;
+            background-color:fuchsia ;
+        }
+        footer{
+            grid-area: footer;
+            background-color: dodgerblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <header>头部</header>
+        <aside>侧边栏</aside>
+        <main>内容</main>
+        <footer>底部</footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+
+        /**
+         * 函数也是一个对象
+         * ---普通对象封装数据
+         * ---函数封装函数,功能
+         *
+         *
+         * 函数声明
+         * function 函数名([形参一,形参二,...,形参n]){
+         *     //---[]可选
+         * }
+         *
+         * let 函数名 = function([形参一,形参二,...,形参n]){
+         *
+         * }
+         */
+        myFunction = new Function("console.log('这是我的函数');");
+        function printMy(){
+            console.log('我是一');
+            console.log("我是二");
+            console.log("我是三");
+        }
+        console.log(myFunction());
+        console.log(printMy);//打印函数体
+        console.log(printMy());//调用函数
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+        window.onload = function(){
+            /**
+             * 获取body元素
+             */
+                //1.方法一
+            let bodyElement = document.getElementsByTagName("body")[0];
+            // console.log(bodyElement);
+            //2.方法二
+            let body = document.body;
+            let html = document.documentElement;//根标签
+            let a = document.all.length;
+            for(let i=0;i<a;i++){
+                // console.log(document.all[i]);
+            }
+            //获取所有元素
+            let all = document.getElementsByTagName("*");
+            for(let i=0;i<all.length;i++){
+                // console.log(all[i]);
+            }
+            /**
+             * 根据class属性值，不支持IE8以下的浏览器
+             */
+            let diva = document.getElementsByClassName("div1");
+            diva.value = 4545;
+            /**
+             * 选择div1下面的div,可以根据css选择器选择元素对象querySelector,只找第一个
+             */
+            let div1_div = document.querySelector(".div1 div")
+            console.log(typeof div1_div);
+            console.log(div1_div.innerHTML);
+            /**
+             * querySelectorAll返回一个数组
+             */
+            let div1_divall = document.querySelectorAll(".div1 div");
+            console.log(div1_divall);
+        }
+    </script>
+</head>
+<body>
+    <div class="div1">dd
+        <div>ddd</div>
+        <div>ddd</div>
+        <div>ddd</div>
+        <div>ddd</div>
+        <div>aaa</div>
+        <div>aaa</div>
+        <div>aaa</div>
+        <div>aaa</div>
+    </div>
+</body>
+</html>

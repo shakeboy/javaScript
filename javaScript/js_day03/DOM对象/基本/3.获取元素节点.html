@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+            /**
+             * 获取元素节点对象
+             *
+             */
+    function getDiv1() {
+        //根据id
+        // let div1 = document.getElementById("div1");
+        // console.log(div1);
+        // //根据标签名 返回一个数组
+        // let arrayLi = document.getElementsByTagName("li");
+        // console.log(arrayLi);
+        //
+        // for (let i=0;i<arrayLi.length;i++){
+        //     alert(arrayLi[i].innerText);
+        // }
+        //标签的name ，返回一个数组
+        let array2 = document.getElementsByName("p1");
+        console.log(array2);
+        for (let i=0;i<array2.length;i++){
+            alert(array2[i].innerHTML);
+        }
+    }
+
+        window.onload = function () {
+
+        }
+    </script>
+</head>
+<body>
+<div id="div1">
+    <p>yidad</p>
+    <ul>
+        <li>45</li>
+        <li>44</li>
+        <li>11</li>
+    </ul>
+</div>
+<div>
+    <p name="p1">yidad</p>
+    <ul>
+        <li name="p1">45</li>
+        <li name="p1">44</li>
+        <li>11</li>
+    </ul>
+</div>
+<button>查询所有li节点</button>
+<button onclick="getDiv1()">查询第div1节点</button>
+<button></button>
+<button></button>
+
+</body>
+</html>

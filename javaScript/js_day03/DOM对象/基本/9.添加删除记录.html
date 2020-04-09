@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            /*justify-content: space-around;*/
+            text-align: center;
+            justify-items: center;
+            align-items: center;
+        }
+        table{
+            width:800px;
+            height: auto;
+            border: solid 4px deeppink;
+            background-color: pink;
+        }
+        form{
+            width:400px;
+            height: auto;
+            border: solid 4px deeppink;
+            background-color: pink;
+            text-align: center;
+        }
+        td{
+            border-bottom: #ff93ec 2px solid;
+            border-right: #ff93ec 2px solid;
+        }
+        button{
+            width: 100px;
+            height: 30px;
+        }
+        .form{
+            display: flex;
+            justify-content: center;
+            width:100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>人员表</thead>
+        <tr>
+            <td>姓名</td>
+            <td>年龄</td>
+            <td>性别</td>
+            <td>兴趣</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>姓名</td>
+            <td>年龄</td>
+            <td>性别</td>
+            <td>兴趣</td>
+            <td><a href="javascript:;">编辑</a></td>
+        </tr>
+        <tr>
+            <td>姓名</td>
+            <td>年龄</td>
+            <td>性别</td>
+            <td>兴趣</td>
+            <td><a href="#">编辑</a></td>
+        </tr>
+        <tr>
+            <td>姓名</td>
+            <td>年龄</td>
+            <td>性别</td>
+            <td>兴趣</td>
+            <td><a href="#">编辑</a></td>
+        </tr>
+        <tr>
+            <td>姓名</td>
+            <td>年龄</td>
+            <td>性别</td>
+            <td>兴趣</td>
+            <td><a href="#">编辑</a></td>
+        </tr>
+
+    </table>
+
+<div class="form">
+    <form>
+        添加个人信息<br>
+        姓名：<input type="text" id="name"><br>
+        年龄：<input type="text" id="age"><br>
+        性别：<input type="text" id="sex"><br>
+        兴趣：<input type="text" id="hobby"><br>
+        <button id="btn_Add">添加</button>
+        <button id="btn_Reset">重置</button>
+    </form>
+</div>
+
+<script type="text/javascript">
+    let name = document.getElementById("name");
+    let age = document.getElementById("age");
+    let sex = document.getElementById("sex");
+    let hobby = document.getElementById("hobby");
+
+    let btn_Add = document.getElementById("btn_Add");
+    let btn_Reset = document.getElementById("btn_Reset");
+    let allA = document.getElementsByTagName("a");
+    function Edit(){
+        for(let i=0;i<allA.length;i++){
+            /**
+             * for循环在页面加载完成时就会执行完
+             * @returns {boolean}
+             */
+            alert("for循环正在执行"+i);
+            allA[i].onclick = function () {
+                /**
+                 * 响应函数在for完成之后才执行
+                 * @type {Node & ParentNode}
+                 */
+                alert("响应函数正在执行"+i);
+                // alert("dd");
+                //删除该行
+                // alert(this)//this就是该超链接
+                let grandFather = this.parentNode.parentNode;//爷爷
+                //确认删除吗？grandFather.Children所有子元素组
+                let person = grandFather.getElementsByTagName("td")[0].innerHTML;
+                if(confirm("确认删除"+person+"吗？")){
+                    grandFather.parentNode.removeChild(grandFather);
+                }
+                //不进行页面跳转，取消默认行为
+                return false;
+            }
+        }
+    }
+    Edit();
+    btn_Reset.onclick = function () {
+        // alert(name.value);
+        if(confirm("确认重新填写吗？")){
+            name.value = null;
+            age.value = null;
+            sex.value = null;
+            hobby.value = null;
+        }
+    };
+
+    btn_Add.onclick = function () {
+        let name = document.getElementById("name").value;
+        let age = document.getElementById("age").value;
+        let sex = document.getElementById("sex").value;
+        let hobby = document.getElementById("hobby").value;
+        let trAdd = document.createElement("tr");
+        let td_Name = document.createElement("td");
+        let td_Age = document.createElement("td");
+        let td_Sex = document.createElement("td");
+        let td_Hobby = document.createElement("td");
+        let td_Space = document.createElement("td");
+        let a = document.createElement("a");
+        a.innerHTML = "编辑";
+        a.href = "javascript:;";
+        //绑定点击事件
+        a.onclick = Edit;
+        td_Name.innerHTML = name;
+        td_Age.innerHTML = age;
+        td_Sex.innerHTML = sex;
+        td_Hobby.innerHTML = hobby;
+        td_Space.appendChild(a);
+        console.log(a);
+        trAdd.appendChild(td_Name);
+        trAdd.appendChild(td_Age);
+        trAdd.appendChild(td_Sex);
+        trAdd.appendChild(td_Hobby);
+        trAdd.appendChild(td_Space);
+
+        console.log(trAdd);
+        // console.log(trAdd.parentNode);
+        let tbody = document.getElementsByTagName("tbody")[0];
+        tbody.appendChild(trAdd);
+
+    }
+
+
+</script>
+</body>
+</html>

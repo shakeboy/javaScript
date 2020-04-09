@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        let a = 12;
+        alert(a);
+        function myf(){
+            alert(a);
+            let a = 45;
+            alert(this.a);
+        };
+        console.log(myf);
+        myf();
+        alert(a);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

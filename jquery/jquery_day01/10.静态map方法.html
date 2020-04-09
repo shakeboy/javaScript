@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>静态map方法</title>
+    <script src="../jquery库/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        let arr = [1,3,5,7];
+        let wArr = {1:2,5:4,6:2,length:5};
+
+        // arr.map(function(value, index,array){
+        //     console.log(index,value,array);
+        // });
+
+
+        //不能遍历伪数组
+        // wArr.map(function(value, index,array){
+        //     console.log(index,value,array);
+        // });
+        //和jquery的each一样,map的静态方法可以遍历伪数组
+        let res = $.map(wArr,function (value,index) {
+            console.log(index,value);
+            return index+value;
+        });
+        let res1 = $.each(wArr,function (index,value) {
+            console.log(index,value);
+        })
+        console.log(res);
+        console.log(res1);
+        /*
+        jQuery中的each静态方法默认返回值是数组本身，map的默认静态方法是一个空数组，可以设置return
+         */
+    </script>
+    <style>
+
+    </style>
+</head>
+<body>
+
+</body>
+</html>

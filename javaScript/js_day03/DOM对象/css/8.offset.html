@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            /**
+             *如果没有开启定位，返回body
+             * 开启定位的最近父元素
+             */
+            let box2 = document.getElementById("box2");
+            let box1 = document.getElementById("box1");
+            // alert(box2.offsetParent);
+            // alert(box2.offsetParent.id);
+            // /**
+            //  * offsetLeft
+            //  * -当前元素相对于定位元素的水平偏移量
+            //  * offsetTop
+            //  * -当前元素相对于定位元素的垂直偏移量
+            //  */
+            // alert(box2.offsetLeft);
+            // alert(box2.offsetTop);
+
+            /**
+             * scrollHeight滚动的高度
+             * scrollWidth滚动的高度
+             */
+            alert(box2.scrollHeight);
+            alert(box2.scrollWidth);
+            let btn = document.getElementById("btn");
+            btn.onclick = function () {
+                alert(box1.scrollLeft);
+                alert(box1.scrollTop);
+            }
+            /**
+             * 判断滚动条是否滚动到底部
+             * scrollHeight-scrollTop = clientHeight====>垂直滚动条到底部
+             * scrollWidth-scrollLeft = clientHeight====>水平滚动条到最右边
+             */
+        }
+
+    </script>
+    <style>
+
+    </style>
+</head>
+<body>
+    <button id="btn">点我找滚动距离</button>
+    <div id="box" >
+        <div id="box1" style="position: relative;height: 400px;background-color: purple;width: 400px;overflow:auto">
+            <div id="box2" style="height:1000px;background-color: #ff93ec;width: 600px">
+                hello world<br>
+                hello world<br>
+                hello world<br>
+                hello world<br>
+                hello world<br>
+                hello world<br>
+                hello world<br>
+                hello world<br>
+                hello world<br>
+                hello world<br>
+                hello world<br>
+                hello world<br>
+                hello world<br>
+                hello world<br>
+                hello world<br>
+                hello world<br>
+                hello world<br>
+                hello world<br>
+                hello world<br>
+                hello world<br>
+                hello world<br>
+                hello world<br>
+                hello world<br>
+                hello world<br>
+                hello world<br>
+                hello world<br>
+                hello world<br>
+                hello world<br>
+                hello world<br>
+                hello world<br>
+                hello world<br>
+                hello world<br>
+                hello world<br>
+                hello world<br>
+                hello world<br>
+                hello world<br>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

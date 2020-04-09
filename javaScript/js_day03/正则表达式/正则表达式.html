@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        /**
+         * 量词
+         *\/a{3}/---aaa
+        *   \/ab{3}/ ---abbb
+         *
+         *
+         *   {m,n}  m-n次
+         *   {n,}任意次
+        */
+        // /(ab){3}/---ababab
+            // /ab{1,3}c/ ---abc abbc abbbc
+        let reg = /a{3}/gi;
+        let str ="sssaaaAAA";
+        console.log(str.search(reg));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

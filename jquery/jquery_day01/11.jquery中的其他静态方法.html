@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>11.jquery中的其他静态方法</title>
+    <script src="../jquery库/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        /*
+        去除字符串两端的空格
+        参数，字符串
+        返回值，去除字符串之后的字符串
+         */
+        let str = "     da sd    ";
+        console.log(str);
+        let str1 = $.trim(str);
+        console.log(str1);
+        /*
+        isWindow()判断传入的对象是否是window对象
+         */
+        let w = window;
+        let flag = $.isWindow(w);
+        console.log(flag);
+        /*
+        isArray是否是数组,返回值，true，false
+         */
+        let arr = [1,2,3,6,5,8,9];
+        let flag0 = $.isArray(arr);
+        console.log(flag0);
+
+        /*
+        isFunction
+         */
+        let f = function(){
+            alert("我是一个函数");
+        };
+        let flag1 = $.isFunction(f);
+        console.log(flag1);
+
+        /*匿名函数
+        (function( window, undefined ) {
+
+        })(window);
+         */
+    </script>
+    <style>
+
+    </style>
+</head>
+<body>
+
+</body>
+</html>

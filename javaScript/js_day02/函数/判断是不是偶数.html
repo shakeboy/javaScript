@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function f() {
+            let number = document.getElementById("number").value -0;
+            if(typeof number === "number"){
+                alert(number%2===0?"是偶数":"不是偶数");
+            }else{
+                alert("您输入的不是数字")
+            }
+        }
+    </script>
+    <style>
+        #but{
+            width:auto;
+            height: 20px;
+            background-color: cornflowerblue;
+        }
+        #but:hover{
+            width:100px;
+            height: 30px;
+            background-color:deeppink;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" placeholder="请输入一个数值" id="number">
+    <button id="but" value="判断是不是偶数" onclick="f()">判断是不是偶数</button>
+</body>
+</html>

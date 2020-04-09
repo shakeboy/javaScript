@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /**
+         * 对象分类
+         * 1.内建对象
+         * --ES定义
+         * --Math,String ......
+         *
+         * 2.宿主对象
+         *  --JS运行环境提供的对象
+         *  --BOM,DOM
+         *
+         *  3.自定义对象
+         *  --有开发人员自己定义的对象
+         *  --new Constructor构造函数
+         */
+        //创建对象
+        let obj = {};
+        //在对象中添加属性
+        obj.name = "石义钊";
+        obj.age = 21;
+        obj.academy = "计算机学院";
+        console.log(obj);
+
+        let obj1 = {
+            size:15,
+            hobby:"吃饭",
+            past:"2011-11-11",
+            123:455
+        };
+        console.log(obj1);
+        // console.log(obj.s);//undefined
+        obj.name="吴可欣";
+        console.log(obj.name);
+        //删除属性
+        delete obj.name;
+        console.log(obj);
+        /**
+         * 对象的属性名不遵守标识符的规范
+         * 特殊的不能点的访问,要用键值对的方式
+         */
+        console.log(obj1["123"]);
+        /**
+         * 检查是否含有对象
+         */
+        console.log("size" in obj1);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

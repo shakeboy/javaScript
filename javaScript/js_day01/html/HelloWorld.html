@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+    <script type="text/javascript">
+        alert("Hello World");//弹窗
+        document.write("(Hello World)");//输出在页面body
+        console.log("Hello World")//输出在控制台
+        console.clear();//清除控制
+    </script>
+    <script>
+        alert("我是head的script")
+    </script>
+<!-- 外部文件，利用浏览器的缓存机制-->
+    <script type="text/javascript" src="HelloWorld.html"></script>
+</head>
+<body>
+<script>
+    alert("我是内部body的script")
+</script>
+<!--可以将JavaScript编写到onclick代码中-->
+<!--可以写在标签的属性中，但属于结构和属性耦合，不便于维护-->
+    <button onclick="alert('Hello World')">点我</button>
+<!--可以将JavaScript编写到onclick代码中-->
+<a href="javascript:alert('Hello World');">点我一下</a>
+<a href="javascript:;">点我一下</a>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        let a =0x123;//十六进制
+        let b = 0o44;//八进制
+        let c = 123;//十进制
+        // let d = 0b456;不支持
+        console.log(a);
+        console.log(b);
+        console.log(c);
+        c = 0b111;//二进制
+        console.log(c);
+        //"070"有些浏览器会当成八进制解析,有些会当作十进制解析
+        console.log(parseInt("070",10));
+        console.log(parseInt("070",16));
+        console.log(parseInt("070",20));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

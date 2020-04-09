@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+    <ul id="city">城市
+        <li>北京</li>
+        <li>天津</li>
+        <li>上海</li>
+    <button onclick="getCity()"> 获取li子节点元素</button>
+    <button onclick="getAllCity()"> 获取所有子节点元素</button>
+    <button onclick="getChildren()"> 获取孩子元素</button>
+    <button onclick="getBrother()"> 获取兄弟元素</button>
+
+<script>
+    /**
+     * 获取li子节点元素
+     */
+    function getCity(){
+        //获取city的元素节点
+        let city = document.getElementById("city");
+        let cityArray = city.getElementsByTagName("li");
+        // 获取所有li元素
+        for (let i=0; i<cityArray.length;i++){
+            console.log(cityArray[i].innerHTML);
+        }
+    }
+
+    /**
+     * 获取所有节点元素
+     */
+    function getAllCity(){
+        //获取city的元素节点
+        let city = document.getElementById("city");
+        // let cityArray = city.getElementsByTagName("li");
+        // 获取city子节点元素
+        let nodeChild = city.childNodes;
+        alert(nodeChild.length);
+        //节点br li br li br li br li br
+        //DOM标准也会把空白当作字节点
+        //IE8及以下版本会返回4个子节点
+        for (let i=0; i<nodeChild.length;i++){
+            console.log(nodeChild[i].innerHTML);
+        }
+    }
+    function getChildren() {
+        //获取city的元素节点
+        let city = document.getElementById("city");
+        // let cityArray = city.getElementsByTagName("li");
+        // 获取city子节点元素
+        let child = city.children;
+        //alert(child);//[object HTMLCollection]
+        for(let i = 0 ;i<child.length;i++){
+            console.log(child[i].innerHTML);
+        }
+    }
+    function getBrother() {
+        //获取city的元素节点
+        let city = document.getElementById("city");
+        // let cityArray = city.getElementsByTagName("li");
+        // 获取city子节点元素//获取当前第一个子元素
+        let firstChild = city.firstChild;
+        console.log(firstChild);
+        let firstElementChild = city.firstElementChild;
+        console.log(firstElementChild);
+        //获取最后一个子节点
+        let lastChlid = city.lastChild;
+        console.log(lastChlid);
+        let lastElementChild = city.lastElementChild;
+        console.log(lastElementChild);
+
+
+    }
+</script>
+</body>
+</html>

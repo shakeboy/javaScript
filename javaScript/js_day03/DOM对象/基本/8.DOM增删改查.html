@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+
+<body>
+
+    <div id="div1">dd
+        <div>1</div>
+        <div id="two">2</div>
+        <div id="three">3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+    </div>
+    <button id="btn_1">创建bbb子节点</button><br>
+    <button id="btn_2">删除子节点</button><br>
+    <button id="btn_3">插入bbb子节点</button><br>
+    <button id="btn_4">replaceChild</button><br>
+    <button id="btn_5">innerHtml</button><br>
+
+
+    <script type="text/javascript">
+        window.onload = function(){
+            let divs = document.getElementById("div1");
+            /**
+             * 创建DOM对象
+             */
+            function myClick(id,fun){
+                id = document.getElementById(id);
+                id.onclick = fun;
+            }
+            myClick("btn_1",function () {
+                //创建子节点
+                //createElement,创建一个元素，根据标签名，并将对象返回
+                //1.创建div
+                let createDiv = document.createElement("div");
+                //2.创建文本
+                let text = document.createTextNode("我是新建的div")
+                //3.搁置在div中------appendChild
+                createDiv.appendChild(text);
+                //4.搁置在浏览器某一个位置
+                divs.appendChild(createDiv);
+            });
+            myClick("btn_2",function () {
+                // console.log(divs.childNodes[2]);
+                // let div = document.getElementById("two");
+                // divs.removeChild(divs.childNodes[2]);
+                divs.childNodes[2].parentNode.removeChild(divs.childNodes[2]);
+            });
+
+            //insertBefore在指定的子节点前
+            myClick("btn_3",function (newChild, refChild) {
+                let div = document.createElement("div");
+                div.innerHTML="ddd";
+                let div2 = document.getElementById("three");
+                divs.insertBefore(div, divs.childNodes[2]);
+            });
+            //replaceChild
+            myClick("btn_4",function (newChild, refChild) {
+                let div1 = document.createElement("div1");
+                div1.innerHTML="ddd";
+                let div2 = document.getElementById("three");
+                divs.replaceChild(div1,div2);
+            });
+            /**
+             * 开销大，影响所有的div,兄弟们都被影响了
+             */
+            myClick("btn_5",function () {
+                divs.innerHTML += "<div>石义钊你好呀</div>";
+            })
+
+
+        }
+    </script>
+</body>
+</html>

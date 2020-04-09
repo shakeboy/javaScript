@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery库/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        //$():代表jQuery的核心函数
+
+        //1.接收一个函数
+        // $(function () {
+        //     alert("hello jquery");
+        // })
+
+        //2.接受一个字符串....接收一个字符串选择器--->返回一个jquery对象
+        // $(function () {
+        //     let box1 = $(".box1");
+        //     let box2 = $(".box2");
+        //     console.log(box1);
+        //     console.log(box2);
+        // });
+
+        //3.接受一个代码片段
+        window.onload = function () {
+            let $p = $("<p>我是段落</p>");
+            console.log($p);
+            $(".box1").append($p);
+        //4.传递DOM元素，会被包装成一个jQuery对象返回给我们
+            let span = document.getElementsByTagName("span")[0];
+            console.log(span);
+            let $span = $(span);
+            console.log($span);
+        }
+
+    </script>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+<div class="box2"></div>
+<span>我是span</span>
+</body>
+</html>

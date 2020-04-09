@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            /**
+             *
+             */
+
+
+        }
+    </script>
+</head>
+<body>
+<div class="grid">
+    <div id="grid1"></div>
+    <div id="grid2"></div>
+    <div id="grid3"></div>
+    <div id="grid4"></div>
+    <div id="grid5"></div>
+    <div id="grid6"></div>
+</div>
+</body>
+<style>
+    .grid{
+        display: grid;
+        /*grid-template-columns:100px 100px 100px;*/
+        grid-template-columns:1fr 1fr 1fr;
+        grid-template-rows:100px 100px 100px;
+        /*row-gap: 20px;*/
+        /*column-gap: 20px;*/
+        gap: 20px;
+
+    }
+    #grid1{
+        background-color: #ff93ec;
+    }
+    #grid2{
+        background-color: aqua;
+    }
+    #grid3{
+        background-color: saddlebrown;
+    }
+    #grid4{
+        background-color: blueviolet;
+    }
+    #grid5{
+        background-color: blue;
+    }
+    #grid6{
+        background-color: magenta;
+    }
+</style>
+</html>

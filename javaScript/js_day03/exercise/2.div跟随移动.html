@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            /**
+             *document.mouseover
+             */
+            window.onmousemove = function (event) {
+                //鼠标的对象，位置
+                // let number = RandomSource;
+                //整个页面的
+                let mouseX = event.pageX + "px";
+                let mouseY = event.pageY + "px";
+                // let mouseX = event.clientX + "px";
+                // let mouseY = event.clientY + "px";
+                //设置偏移量
+                //开始绝对定位，或者相对定位
+                document.getElementsByTagName("div")[0].style.left = mouseX;
+                document.getElementsByTagName("div")[0].style.top = mouseY;
+                //chrome认为滚动条是body的
+                console.log(document.body.scrollTop);//body
+                console.log(document.documentElement.scrollTop);//html
+          }
+        }
+    </script>
+    <style>
+
+    </style>
+</head>
+<body style="height: 100px">
+    <div id="box" style="width:200px;height: 200px;background-color: #ff93ec;position: absolute"></div>
+</body>
+</html>

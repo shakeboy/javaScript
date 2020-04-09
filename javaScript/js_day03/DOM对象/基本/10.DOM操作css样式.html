@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            let btn_ChangeBox = document.getElementById("btn_ChangeBox");
+            btn_ChangeBox.onclick = function () {
+                // alert("dd");
+                let box = document.getElementById("box");
+                /**
+                 * 实际上修改的是内联样式
+                 * @type {string}
+                 */
+                box.style.width = "50px";
+                box.style.backgroundColor = "#dddd22";
+                box.style.borderRadius = "20px";
+                box.style.height = "300px";
+                box.style.animation = "ease";
+                box.style
+            }
+        }
+    </script>
+    <style>
+        #box:hover{
+            /*animation: steps();*/
+            animation: normal !important;
+            height: 200px !important;
+            width: 152px !important;
+            background-color: black !important;//用了这个!important，则此时不允许用js,拥有一个最高级
+        }
+        #box:
+        #box{
+            background-color: cornflowerblue;width: 500px;height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn_ChangeBox">点我改变世界</button>
+    <div id="box"></div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+        /**
+         * split()将一个字符串拆分成数组,根据字符串拆分
+         * 1.根据任意字母
+         * 2.根据正则表达式拆分
+         * 3.默认全局拆分
+         * /[a-z]/i
+         */
+        let str = "dsafasf5956262";
+        let reg = /[a-z]/;
+        let result = str.split(reg);
+        alert(result);
+        /**
+         *search()
+         * --搜索字符串中是否含有指定内容
+         *返回第一次出现的索引
+         * 没有搜索到则表示-1,也可以根据正则表达式进行索引
+         * --替换
+         * replace()
+         *1.old value
+         * 2.new value
+         * --默认只替换第一个,即使设置全局匹配也没用
+         * 可以替换一个接受的正则表达式
+         * 进行替换
+         */
+        let index = str.search("2");
+
+        str = "156f2f2f55f6f";
+        result = str.replace("f","###");
+        console.log(result);
+        result = str.replace(/[a-z]/ig,"@@@");
+        console.log(result);
+        /**
+         * 删除字母
+         * 提取纯数字
+         */
+        console.log(Number(str.replace(/[a-z]/ig,"")));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<ul id="city">城市<li id="bj">北京</li><li id="tj">天津</li><li id="sh">上海</li>
+    <button id="btn_1"> 获取ul子节点元素</button>
+    <button id="btn_2" > 获取前后兄弟元素</button>
+    <button id="btn_3"> 获取value元素</button>
+    <button id="btn_4"> 获取北京元素</button>
+</ul>
+<input id="text" name="" value="">
+    <script>
+        /**
+         *封装函数
+        */
+        function myClick(id,fun) {//id点击按钮，，，fun事件回调
+            //获取city的元素节点
+            id = document.getElementById(id);
+            //事件回调
+            id.onclick = fun;
+        }
+        myClick("btn_1",function () {
+            let id = document.getElementById("city");
+            console.log(id);
+        });
+        //获取兄弟(也会获取空白文本)
+        myClick("btn_2",function () {
+            let tj = document.getElementById("tj");
+            let ps = tj.previousSibling;
+            let pse = tj.previousElementSibling;
+            let ns = tj.nextSibling;
+            let nse = tj.nextElementSibling;
+            console.log(ps.innerText);
+            console.log(pse.innerText);
+            console.log(ns.innerText);
+            console.log(nse.innerText);
+        });
+        myClick("btn_3",function () {
+            let t_value = document.getElementById("text").value;
+            console.log(t_value);
+        });
+        myClick("btn_4",function () {
+            let text = document.getElementById("bj");
+            console.log(text.innerText);
+            //获取北京文本节点对象
+            let t_value = text.firstChild.nodeValue;
+            console.log(t_value.innerHTML);
+        });
+
+
+
+
+
+
+
+        /**
+         * innerText和innerHtml类似，只是没有标签包裹
+         */
+    </script>
+</body>
+</html>

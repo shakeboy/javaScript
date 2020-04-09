@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            /**
+             *
+             */
+
+        }
+    </script>
+    <style>
+        #wrap{
+            width:120px;
+            height:140px;
+            border: 1px solid red;
+            margin:400px auto;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateX(-20deg) rotateY(0deg);//旋转的度数
+        }
+        body{
+            margin:0;
+            padding: 0;
+            background-color: black;
+        }
+        #wrap img{
+            width:120px;
+            height:140px;
+            position:absolute;
+            box-shadow: deeppink;
+        }
+    /*    设置3D布局
+        1.设置场景的景深
+            perspective:800px
+        2.场景风格
+            transform-style: preserve-3d
+        3.transform: rotateX(0deg) rotateY(0deg);//旋转的度数
+
+        4.translateZ(350px)向自己的方向走一定距离
+
+        5.ele.style.transition过渡要有一个过程
+
+        6.拖拽
+        transform rotateX & Y
+
+        移动鼠标，不松开mousedown
+        移动过程计算
+        松开之后停止计算
+    */
+        #perspective{
+            //景深
+            perspective:800px;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="perspective">
+        <div id="wrap">
+            <img src="../img/1.png" alt="">
+            <img src="../img/2.png" alt="">
+            <img src="../img/3.png" alt="">
+            <img src="../img/4.png" alt="">
+            <img src="../img/5.png" alt="">
+            <img src="../img/6.png" alt="">
+            <img src="../img/7.png" alt="">
+            <img src="../img/8.png" alt="">
+            <img src="../img/9.jpg" alt="">
+            <img src="../img/10.jpg" alt="">
+            <img src="../img/11.jpg" alt="">
+            <img src="../img/12.jpg" alt="">
+        </div>
+    </div>
+<script type="text/javascript">
+    /**
+     * 计算旋转度数
+     */
+    let oImg = document.getElementsByTagName("img");
+    let deg = 360/(oImg.length);//集合！==数组
+    /**
+     * 遍历所有图片
+     *
+     * foreach是数组的
+     */
+    /**
+     * 页面加载完成之后再执行的js代码
+     */
+    window.onload = function () {
+        Array.prototype.forEach.call(oImg,function (ele, index, self) {
+            ele.style.transform = "rotateY("+deg*index+"deg) translateZ(500px)";
+            // ele.style.transform = "rotateX("+deg*index+"deg)";
+            // ele.style.transition = 1 +"s";
+            ele.style.transition = (1 + oImg.length - index)*0.5+"s";
+        });
+    }
+    /**
+     * 拖拽
+     */
+    //鼠标事件
+    let newX,newY,lastX,lastY,minusX,minusY,rotateX=-20,rotateY=0;
+    let owrp = document.getElementById("wrap");
+    document.onmousedown = function (event) {
+        //按下
+        lastX = event.clientX;
+        lastY = event.clientY;
+
+        //移动
+        this.onmousemove = function (event) {
+            // console.log("移动");
+            //每一次移动，相册旋转多少
+            //新的位置减去旧的位置的值就是位置变换量
+            //event.clientX,e.eventY.......鼠标移动事件
+            newX = event.clientX;
+            newY = event.clientY;
+            //假设上一次lastX,lastY
+            minusX = newX - lastX;
+            minusY = newY - lastY;
+            rotateX -= minusY*0.1;
+            rotateY += minusX;
+
+            owrp.style.transform = "rotateX("+rotateX+"deg)rotateY("+rotateY+"deg)";
+
+            //新的值赋给旧的值
+            lastX = newX;
+            lastY = newY;
+
+        };
+        //松开
+        this.onmouseup = function (event) {
+            //清除移动
+            // console.log("松开");
+            this.onmousemove = null;
+
+        }
+    }
+</script>
+</body>
+</html>

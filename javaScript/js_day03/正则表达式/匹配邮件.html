@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        /**
+         * 匹配电子邮件2726716788@qq.com
+         *
+         * eg:[\\w&&^[0-9]]{6,}
+         * 1.任意字母数字下划线   [0-9A-z]
+         * 2.@
+         * 3.xxx.com  任意字母数字
+         *
+         * 任意字母数字下划线     .任意字母数字下划线@     任意字母数字          .人以字母（2，5位）     .人以字母（2，5）
+         * / \w{3,}             \.\w+       @          [A-z0-9]+         \.[A-z]{2,5}       (\.[A-z]{2,5}){1,2}  /
+         */
+        let reg = /^\w{3,}\.\w+@[A-z0-9]+\.[A-z]{2,5}(\.[A-z]{2,5}){1,2}$/;
+        let emailStr = "shiyizhao@sss.com";
+        console.log(reg.test(emailStr));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

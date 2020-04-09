@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            /**
+             x = divs[0].clientLeft;
+             y = divs[0].clientTop;
+             y = divs[0].clientHeight-y;
+             message = "x = "+ x +"y = "+y;
+             divs[1].innerHTML = message;
+             */
+            let divs = document.getElementsByTagName("div");
+            /**
+             * 事件对象：
+             * ---当时间响应函数被触发时，浏览器每次都会将一个时间对下个作为实参传递进响应函数
+             */
+            divs[0].onmousemove = function (event) {    //[object MouseEvent]
+               // alert(event);
+               //  alert(event.clientX);
+               //  alert(event.clientY)；
+                //解决事件兼容性问题
+               //  if(!event){
+               //      event = window.event||event;
+               //  }
+                divs[1].innerHTML = "X = "+event.clientX+"    Y= "+event.clientY;
+            }
+        }
+    </script>
+    <style>
+        #div1{
+            width:800px;
+            height: 400px;
+            border: 10px solid black;
+        }
+        #div2{
+            margin-top: 20px;
+            width:800px;
+            height: 80px;
+            font-size: 60px;
+            border: 10px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+    <div id="div2">显示坐标</div>
+</body>
+</html>

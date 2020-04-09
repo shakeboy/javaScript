@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            /**
+             获取事件源
+             */
+            let smallImgs = document.getElementsByClassName("smallImg");
+            let img1 = document.getElementById("img1");
+            for(let i =0;i< smallImgs.length;i++){
+                //给么一个页面设置
+                smallImgs[i].onmousemove = function (event) {
+                    // alert(this);//[object HTMLImageElement]
+                    // this.parentNode.parentNode.setAttribute('class','active');
+                    // console.log(img1.src);
+                    console.log(this);
+                    // console.log(event);
+                    // img1.src = this["className"].style.src;
+                    img1.src = this.src;
+                    // break;
+                }
+            }
+        }
+    </script>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        img{
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+        }
+        #img1{
+            width: 800px;
+            height: 800px;
+        }
+        ul{
+            list-style: none;
+            display: flex;
+        }
+        ul li:hover{
+            display: flex;
+            float: left;
+            margin-left: 10px;
+            margin-top: 10px;
+            border: 2px solid dodgerblue;
+            box-shadow: 0px 0px 10px saddlebrown;
+            justify-content: center;
+            align-items: center;
+        }
+        ul li a{
+            text-align: center;
+            background-color: #ff93ec;
+            display: flex;
+            flex-direction: row;
+            justify-items: center;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+<img id="img1" src="img/1.png"><br>
+<ul id="u1">
+    <li class="active"><a href="#"><img src="img/1.png" class="smallImg" ></a></li>
+    <li><a href="#"><img src="img/2.png" class="smallImg"></a></li>
+    <li><a href="#"><img src="img/3.png" class="smallImg"></a></li>
+    <li><a href="#"><img src="img/4.png" class="smallImg"></a></li>
+    <li><a href="#"><img src="img/5.png" class="smallImg"></a></li>
+    <li><a href="#"><img src="img/6.png" class="smallImg"></a></li>
+    <li><a href="#"><img src="img/7.png" class="smallImg"></a></li>
+</ul>
+
+</body>
+</html>

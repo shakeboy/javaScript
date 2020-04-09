@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            /**
+             *
+             */
+            let display = document.getElementById("display");
+            let img = document.getElementById("img");
+            // let isShow = true;
+            display.onclick = function () {
+
+                if(display.innerHTML === '隐藏'){
+                    img.style.display = "none";
+                    display.innerHTML = '显示';
+                    // isShow = false;
+                }else {
+                    img.style.display = "block";
+                    display.innerHTML = '隐藏';
+                    // isShow = true;
+                }
+
+            }
+        }
+    </script>
+    <style>
+
+    </style>
+</head>
+<body>
+    <button id="display">隐藏</button>
+    <br>
+    <img src="img/1.png" id="img">
+</body>
+</html>

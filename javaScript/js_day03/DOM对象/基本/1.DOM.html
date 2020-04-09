@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button id="btn">我是一个按钮</button>
+
+
+
+
+    <script type="text/javascript">
+        /**
+         * 浏览器已经为我们提供了文档对象，是windows对象属性
+         * 是全局变量，是整个网页
+         * @type {HTMLElement}
+         */
+        console.log(document);//object HTMLDocument
+        //获取文档中元素的方法document.getElementById()
+        let btn =document.getElementById("btn");
+
+        btn.innerHTML = "你点击了我";
+        btn.onclick = function () {
+            btn.innerHTML = "嗲的好";
+        };
+        btn.onmousedown = function () {
+            alert("onmousedown");
+        };
+        btn.onmouseover = function () {
+            alert("onmouseover");
+        }
+    </script>
+</body>
+</html>

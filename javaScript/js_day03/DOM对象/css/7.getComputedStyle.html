@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+       window.onload = function () {
+           let btn= document.getElementById("btn");
+           btn.onclick = function () {
+               let box = document.getElementById("box");
+               /**
+                * 1.box对象
+                * 2.可以是一个伪元素
+                * 一般是null值
+                * @type {CSSStyleDeclaration}
+                */
+               // //一般浏览器
+               // let box_style1 = getComputedStyle(box,null);
+               // alert(box_style1.backgroundColor);
+               //
+               // //IE8方式
+               // let box_style2 =  box.currentStyle.backgroundColor;
+               alert(getStyle(box,"width"));
+               //
+               /**
+                * 可见高度和宽度，不带单位px的
+                * 内容区和内边距
+                * 该属性是只读的
+                */
+               alert(box.clientHeight);
+               alert(box.clientWidth);
+               /**
+                * offsetHeight高度和宽度，不带单位px的
+                * offsetWidth内容区和内边距和边框
+                * 该属性是只读的
+                */
+               alert(box.offsetHeight);
+               alert(box.offsetWidth);
+           };
+
+
+           function getStyle(obj,name) {
+               /**
+                * obj  要获取的样式
+                * name 样式名
+                * @param obj name
+                * @param name
+                */
+               //自定义函数
+               // // 一般浏览器
+               // return getComputedStyle(obj,null)[name];
+               //
+               // //IE8
+               // return obj.currentStyle[name];
+
+               return  getComputedStyle(obj,null)[name]||obj.currencyDisplay[name];
+           }
+
+       }
+    </script>
+</head>
+<body>
+<button id="btn">点我呀</button>
+<div id="box" style="background-color: #FEFFCE;width: 200px;height: 200px"></div>
+</body>
+</html>

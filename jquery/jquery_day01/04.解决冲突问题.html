@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery库/test.js"></script>
+    <script src="../jquery库/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        //$符号的冲突问题如何解决？
+        //1.释放$的使用权-----释放操作必须在其他jQuery代码之前编写
+        //释放之后就不能再使用$,改写为使用jQuery
+        //2.自定义访问符号
+        let jq = jQuery.noConflict();
+        jq.noConflict();
+        jq(function () {
+            alert("hello jQuery");
+        });
+    </script>
+    <style>
+
+    </style>
+</head>
+<body>
+
+</body>
+</html>

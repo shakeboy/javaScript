@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        /**
+         * 正则表达式,两个参数,第一个是匹配的的字符串格式,第二个是匹配模式
+         * 1.正则表达式
+         * 2.匹配模式
+         * --i--不区分大小写
+         * --g--全局模式
+         *
+         * 函数的方法创建,灵活
+         */
+        let reg = new RegExp("g*ff","g");
+
+        /**
+         * 字面量创建
+         * 正则表达式创建更加方便
+         * reg = /a/i
+         */
+        reg.test("dddddgrtrerereff0");
+        //创建一个正则表示判断是否含有a或b
+        /**
+         * /[dbc]/i===/a|b|c/i
+         * /[a-z]/任意的小写字母
+         * /[A-Z]/任意的大写字母
+         * 检查是否含有abc,adc,afc
+         * /abc|adc|afc/====/a[bdf]c/
+         * @type {RegExp}
+         */
+        let reg1 = /[ab]/i;
+        alert(reg1.test("addd"));
+        /**
+         * /[^ab]/除了ab以外
+         * reg = /[0-9]/任意数字
+         * reg = /^[0-9]/除了数字
+         *
+         * */
+    </script>
+</head>
+<body>
+
+</body>
+</html>

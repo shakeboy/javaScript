@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery库/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        /**
+         *通过jquery获取DOM元素
+         *
+         * 原生js和jQuery入口函数的加载模式不同
+         * 原生js会等到DOM元素加载完毕，并且图片也加载完毕才会执行
+         * jQuery会等到DOM元素加载完成，但不会等到图片也加载完成
+         */
+        /*
+        $(document).ready(function () {
+            let $img = $("img")[0];
+            console.log($img);
+            let $width = $img.width;
+            console.log($width);
+        });
+        */
+
+        /*
+        原生的js如果编写了多个入口函数门后面编写的会覆盖前面编写的
+        jQuery后写的不会覆盖先写的
+         */
+        // window.onload = function () {
+        //     alert("石义钊1");
+        // };
+        // window.onload = function () {
+        //     alert("石义钊2");
+        // };
+
+
+        $(document).ready(function () {
+            alert("石义钊1");
+        });
+        $(document).ready(function () {
+            alert("石义钊2");
+        });
+    </script>
+    <style>
+
+    </style>
+</head>
+<body>
+    <img src="http://assets.jq22.com/plugin/pc-ed1b5b98-2d95-11e4-8b02-000c29f61318.png" alt="jquery">
+</body>
+</html>

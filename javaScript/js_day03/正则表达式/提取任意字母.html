@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        let str = "1d5a5d8d2cg29r3fasADF";
+        /**
+         * 默认情况下只找一次,可以设置为全局模式进行匹配
+         * @type {RegExpMatchArray}
+         */
+        let result = str.match(/[a-z]/ig);
+        console.log(str);
+        console.log(result);
+        console.log(Array.isArray(result));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

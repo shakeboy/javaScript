@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            /**
+             *数组对象
+             */
+//1.方法，构造方法创建数组
+            let array1 =  [];
+//2.创建指定长度的数组
+            let array2 = new Array(4);
+            // alert(array1.length);
+            alert(array2.length);
+//3.通过元素的方法直接创建
+            let array3 = [1,2,3];
+            alert(array3);
+            /**
+             * 数组对象的属性
+             * 1.length
+             * 2.prototype
+             * 3.constructor
+             */
+            let person = {
+              name : "石义钊",
+                age:21,
+
+            };
+            console.log(array3.length);//设置或返回数组中元素的数目。
+            person.sex = "nan";
+            console.log(person);
+            console.log(array3.constructor);//返回对创建此对象的数组函数的引用
+        }
+    </script>
+    <style>
+
+    </style>
+</head>
+<body>
+
+</body>
+</html>
