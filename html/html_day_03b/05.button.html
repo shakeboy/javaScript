@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>05.button</title>
+    <script src="../jquery库/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+
+    </script>
+    <style>
+
+    </style>
+</head>
+<body>
+<!--    属性
+new : HTML5 中的新属性。
+
+属性 值 描述
+autofocus autofocus 规定当页面加载时按钮应当自动地获得焦点。
+disabled disabled 规定应该禁用该按钮。
+form form_name 规定按钮属于一个或多个表单。
+formaction url 覆盖 form 元素的 action 属性。
+
+注释：该属性与 type="submit" 配合使用。
+
+formenctype 见注释 覆盖 form 元素的 enctype 属性。
+
+注释：该属性与 type="submit" 配合使用。
+
+formmethod get
+post
+ 覆盖 form 元素的 method 属性。
+
+注释：该属性与 type="submit" 配合使用。
+
+formnovalidate formnovalidate 覆盖 form 元素的 novalidate 属性。
+
+注释：该属性与 type="submit" 配合使用。
+
+formtarget _blank
+_self
+_parent
+_top
+framename
+ 覆盖 form 元素的 target 属性。
+
+注释：该属性与 type="submit" 配合使用。
+
+name button_name 规定按钮的名称。
+type button
+reset
+submit
+ 规定按钮的类型。
+value text 规定按钮的初始值。可由脚本进行修改。
+-->
+<style>
+    button:hover {
+        color: chartreuse;
+        transform-origin: left;
+    }
+</style>
+<button type="button" name="btn" value="按钮" autofocus="autofocus" onclick="alert('别点我')" onmouseout="alert('再见')"
+        onmouseover="alert('hello')">点击会有神奇效果
+</button>
+</body>
+</html>

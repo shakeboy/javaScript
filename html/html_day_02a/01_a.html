@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01_以a开头的标签</title>
+    <script src="../jquery库/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        let link = document.createElement('a');
+        link.innerHTML = 'download image';
+
+        link.addEventListener('click', function (ev) {
+            link.href = canvas.toDataURL();
+            link.download = "mypainting.png";
+        }, false);
+
+        document.body.appendChild(link);
+    </script>
+    <style>
+
+    </style>
+</head>
+<body>
+<!--HTML <a> 元素（或称锚元素）可以创建通向其他网页、文件、同一页面内的位置、电子邮件地址或任何其他 URL 的超链接。-->
+<h2 id="first">1.<!-- --> 定义注释的语法格式</h2>
+定义注释<\!-- \-->
+<h2>2.\<\!DOCTYPE\>定义文档类型</h2>
+定义文档类型
+<h2>3.a标签</h2>
+<h3>#链接地址</h3>
+<style>
+    a[href^="https"]::before {
+        content: "🔗 ";
+    }
+
+    a[href^="mailto"]::before {
+        content: "📧 ";
+    }
+
+    a[href^="tel"]::before {
+        content: "📞 ";
+    }
+
+    li {
+        margin-bottom: .5rem;
+    }
+
+</style>
+<ul>
+    <li><a href="https://example.com">Website</a></li>
+    <li><a href="mailto:m.bluth@example.com">Email</a></li>
+    <li><a href="tel:+123456789">Phone</a></li>
+    <li><a href="http://www.github.com">GitHub主页</a></li>
+    <li><a href="http://www.gitee.com">Gitee主页</a></li>
+</ul>
+<h3>#download属性</h3>
+<a href="../../javaScript/js_day03/DOM对象/img/1.png" download="1.png">下载当前文件图片</a><br><br>
+<a href="./1.mp4" download="media">下载当前视频</a><br><br>
+<a href="./嵌入式Linux&Android驱动开发揭秘！——强烈推荐.docx" download="文档下载">文档下载</a><br><br>
+<a href="./1.txt" hreflang="en" download="hreflang">语法代码参考手册</a><br><br>
+<a href="https://www.w3cschool.cn/htmltags/html-language-codes.html" download="">语法代码参考手册</a><br><br>
+<a href="" target="_blank">target</a><br><br>
+<a href="http://www.w3cschool.cn" type="MIME-type">type</a><br><br>
+<a href="http://www.baidu.com" rel="search">rel</a><br><br>
+<a href="" download="">下载当前文件</a><br><br>
+<a href="" download="">下载当前文件</a><br><br>
+<a href="" download="">下载当前文件</a><br><br>
+<a href="" download="">下载当前文件</a><br><br>
+<a href="" download="">下载当前文件</a><br><br>
+<a href="" download="">下载当前文件</a><br><br>
+<a href="" download="">下载当前文件</a><br><br>
+<a href="" download="">下载当前文件</a><br><br>
+<a href="" download="">下载当前文件</a><br><br>
+<a href="" download="">下载当前文件</a><br><br>
+<a href="" download="">下载当前文件</a><br><br>
+<a href="" download="">下载当前文件</a><br><br>
+<a href="" download="">下载当前文件</a><br><br>
+<a href="" download="">下载当前文件</a><br><br>
+<a href="" download="">下载当前文件</a><br><br>
+<a href="" download="">下载当前文件</a><br><br>
+<a href="" download="">下载当前文件</a><br><br>
+<a href="" download="">下载当前文件</a><br><br>
+<a href="" download="">下载当前文件</a><br><br>
+<a href="" download="">下载当前文件</a><br><br>
+<a href="" download="">下载当前文件</a><br><br>
+<a href="" download="">下载当前文件</a><br><br>
+<a href="" download="">下载当前文件</a><br><br>
+<a href="" download="">下载当前文件</a><br><br>
+<a href="" download="">下载当前文件</a><br><br>
+<a href="" download="">下载当前文件</a><br><br>
+<a href="" download="">下载当前文件</a><br><br>
+<a href="" download="">下载当前文件</a><br><br>
+<a href="" download="">下载当前文件</a><br><br>
+<a href="#first">返回当前的id位置</a>
+<h3>#hreflang该属性用于指定链接文档的人类语言。</h3>
+<a hreflang="">dd</a>
+<h2>4.带图片的链接</h2>
+<a href="https://developer.mozilla.org/en-US/">
+    <img src="https://mdn.mozillademos.org/files/6851/mdn_logo.png"
+         alt="MDN logo"/>
+</a>
+<h2>5.创建一个Email链接</h2>
+<a href="mailto:nowhere@mozilla.org">Send email to nowhere</a>
+<h2>6.accessKey</h2>
+<a href="http://www.w3cschool.cn/html/html-tutorial.html" accesskey="h">HTML 教程</a><br>
+<a href="http://www.w3cschool.cn/css/css-tutorial.html" accesskey="c">CSS 教程</a>
+
+<p> accesskey 属性规定了激活元素的快捷键。</p>
+<p><strong>注意：</strong> 不同浏览器使用的快捷键方法不同：</p>
+<ul>
+    <li>IE, Chrome, Safari, Opera 15+: [ALT] + <em>accesskey</em></li>
+    <li>Opera prior version 15: [SHIFT] [ESC] + <em>accesskey</em></li>
+    <li>Firefox: [ALT] [SHIFT] + <em>accesskey</em></li>
+</ul>
+<h2>7.可编辑</h2>
+<p contenteditable="true" style="background-color: cornflowerblue;cursor:pointer" translate="yes">我是可以被编辑的</p>
+<h2>8.火狐支持的contentmenu</h2>
+<div contextmenu="mymenu">
+
+    <menu type="context" id="mymenu">
+        <menuitem label="Refresh"></menuitem>
+        <menuitem label="Twitter"></menuitem>
+    </menu>
+
+</div>
+<h2>9.物种</h2>
+<p>点击一个物种，看看它是什么类型：</p>
+<script>
+    function showDetails(animal) {
+        const animalType = animal.getAttribute("data-animal-type");
+        alert("The " + animal.innerHTML + " is a " + animalType + ".");
+    }
+</script>
+<ul>
+    <li onclick="showDetails(this)" id="owl" data-animal-type="bird">Owl</li>
+    <li onclick="showDetails(this)" id="salmon" data-animal-type="fish">Salmon</li>
+    <li onclick="showDetails(this)" id="tarantula" data-animal-type="spider">Tarantula</li>
+</ul>
+<h2>10.可以拖动的</h2>
+<style type="text/css">
+    #div1 {
+        width: 350px;
+        height: 70px;
+        padding: 10px;
+        border: 1px solid #aaaaaa;
+    }
+</style>
+<script>
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+
+    function drag(ev) {
+        ev.dataTransfer.setData("Text", ev.target.id);
+    }
+
+    function drop(ev) {
+        const data = ev.dataTransfer.getData("Text");
+        ev.target.appendChild(document.getElementById(data));
+        ev.preventDefault();
+    }
+</script>
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<br/>
+<p id="drag1" draggable="true" ondragstart="drag(event)" spellcheck="true">这是一段可移动的段落。请把该段落拖入上面的矩形。</p>
+<h2>1.<!-- --></h2>
+
+</body>
+</html>

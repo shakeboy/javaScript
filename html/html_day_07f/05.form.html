@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>05.form</title>
+    <script type="text/javascript">
+
+    </script>
+    <style>
+        #fd {
+            display: flex;
+            text-align: center;
+            background-color: cornflowerblue;
+            width: 400px;
+            height: 400px;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+        }
+
+        div {
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<!--定义和用法
+<form> 标签用于为用户输入创建 HTML 表单。
+
+表单能够包含 input 元素，比如文本字段、复选框、单选框、提交按钮等等。
+
+表单还可以包含 menus、textarea、fieldset、legend 和 label 元素。
+
+表单用于向服务器传输数据。
+-->
+<form action="#" id="form">
+    <fieldset id="fd">
+        <caption>登录</caption>
+        <br>
+        <div>用户名 <input type="text" id="username"><br></div>
+        <div>密码<input type="password" id="password"><br></div>
+        <button type="submit">提交</button>
+    </fieldset>
+</form>
+</body>
+</html>

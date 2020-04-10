@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>W3Cschool(w3cschool.cn)</title>
+</head>
+<body>
+
+<p>注意变化：点击不同位置</p>
+<!--值 	描述
+x1,y1,x2,y2 	如果 shape 属性设置为 "rect"，则该值规定矩形左上角和右下角的坐标。
+x,y,radius 	如果 shape 属性设置为 "circ"，则该值规定圆心的坐标和半径。
+x1,y1,x2,y2,..,xn,yn 	如果 shape 属性设置为 "poly"，则该值规定多边形各边的坐标。
+如果第一个坐标和最后一个坐标不一致，那么为了关闭多边形，浏览器必须添加最后一对坐标。-->
+<img src="1.png" width="145" height="126" alt="Planets" usemap="#test">
+
+<map name="test">
+    <area shape="rect" coords="0,0,82,126" target="_blank" alt="Sun" href="2.png">
+    <area shape="circle" coords="90,58,20" target="_blank" alt="Mercury" href="3.png">
+    <area shape="circle" coords="124,58,20" target="_blank" alt="Venus" href="4.png">
+</map>
+
+</body>
+</html>
+<!--HTML5 <area>标签能够在所需图像中设置作用区域，使用者可以通过点击该作用区域来跳转到相应的页面-->

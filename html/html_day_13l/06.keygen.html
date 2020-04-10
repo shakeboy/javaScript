@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>06.keygen</title>
+    <script type="text/javascript">
+
+    </script>
+    <style>
+
+    </style>
+</head>
+<body>
+<!--定义和用法
+<keygen> 标签规定用于表单的密钥对生成器字段。
+
+当提交表单时，私钥存储在本地，公钥发送到服务器。
+-->
+<form action="demo_keygen.asp" method="get">
+    Username: <input type="text" name="usr_name"/>
+    Encryption:
+    <keygen name="security"/>
+    <input type="submit"/>
+</form>
+
+</body>
+</html>
